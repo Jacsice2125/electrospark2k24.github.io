@@ -1,0 +1,1904 @@
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Pacifico&display=swap");
+
+/* variable decloration */
+:root {
+  --Primary: #2c5f2d;
+  --Primary-light: rgba(149, 218, 229, 0.453);
+  --prime: rgba(194, 29, 29, 0.423);
+  --Secondary: #97bc62ff;
+  --sec-opacity: rgba(150, 188, 98, 0.785);
+  --Secondary-light: #79c000ff;
+  --Third-light: #2bae66ff;
+  --Third-color: #ff7f41ff;
+}
+
+::selection {
+  color: var(--Primary);
+  background-color: var(--Secondary-light);
+}
+
+.fa-bars {
+  color: var(--Third-light);
+}
+
+.fa-arrow-left {
+  font-size: 40px;
+  color: var(--Primary);
+  margin: 5px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+/******************************************  Common style  *****************************************/
+.btn {
+  color: white;
+  display: inline-block;
+  background-color: var(--Third-color);
+  padding: 15px 20px;
+  transition: 300ms;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  transform: translateY(5px);
+}
+
+.flex-style {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.size {
+  font-size: 20px;
+}
+
+/*********************  Header style  *********************/
+header {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.041), black),
+    url(/images/college1.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.header-content {
+  padding: 0 2rem;
+  margin: auto;
+  height: 15vh;
+}
+
+.logo {
+  width: 100px;
+  border-radius: 10px;
+}
+
+.image {
+  border-radius: 100px;
+}
+
+.nav-links {
+  width: 60%;
+}
+
+.nav-links a {
+  color: black;
+}
+
+.nav-links li::after {
+  content: "";
+  display: block;
+  background-color: var(--Secondary);
+  height: 2px;
+  transform: scale(0);
+  transition: transform 300ms;
+}
+
+.nav-links li:hover::after {
+  transform: scale(1);
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.team-logo {
+  width: 350px;
+  position: absolute;
+  left: 5%;
+  top: 25vh;
+}
+
+.team-img {
+  width: 300px;
+  border-radius: 200px;
+  opacity: 0.6;
+}
+
+.text-content {
+  color: #2c5f2d;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.text-content h1 {
+  margin: 1.2rem 0;
+  transition: all 100ms;
+  font-weight: 500;
+  font-size: 85px;
+}
+
+.text-content h2 {
+  color: #97bc62ff;
+  font-family: "Oswald", sans-serif;
+  font-size: 40px;
+}
+
+.text-content h3 {
+  font-size: 28px;
+}
+
+.text-content span {
+  font-family: "Oswald", sans-serif;
+  background: linear-gradient(to top, #f32170, #ff6b08, #cf23cf, #eedd44);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  text-shadow: 2px 2px var(--prime);
+}
+
+.text-area {
+  position: absolute;
+  width: 100%;
+  top: 60vh;
+}
+
+.box {
+  color: var(--Secondary);
+  width: 15rem;
+  font-size: 1.6rem;
+  --border-angle: 0turn;
+  --main-bg: conic-gradient(
+    from var(--border-angle),
+    #213,
+    #112 5%,
+    #112 60%,
+    #213 95%
+  );
+  border: solid 3px transparent;
+  border-radius: 0.3em;
+  --gradient-border: conic-gradient(
+    from var(--border-angle),
+    transparent 25%,
+    #08f,
+    #f03 99%,
+    transparent
+  );
+  background: var(--main-bg) padding-box, var(--gradient-border) border-box,
+    var(--main-bg) border-box;
+  background-position: center center;
+  transition: all 300ms;
+}
+
+.box:hover {
+  box-shadow: 3px 5px 11px 0px #08f;
+  transform: translateY(5px);
+}
+
+.content {
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mb {
+  margin-bottom: 2.5rem;
+}
+
+.mt {
+  margin-top: 2.5rem;
+}
+
+.heading {
+  text-align: center;
+}
+
+/*********************  About style  *********************/
+
+main {
+  background-color: var(--sec-opacity);
+}
+
+.wwa {
+  height: 50vh;
+  background: url(/images/college-location.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.wwa-box {
+  background-color: var(--Secondary);
+  padding: 20px;
+  margin-right: 15px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  transition: all 300ms;
+}
+
+.wwa-box h3 {
+  margin-bottom: 5px;
+}
+
+.wwa-box:first-child {
+  margin-left: 15px;
+}
+
+.wwa-box:hover {
+  box-shadow: 3px 5px 11px 0px black;
+  transform: translateY(25px);
+}
+
+/*********************  Events style  *********************/
+
+.event {
+  height: 70vh;
+  position: relative;
+}
+
+.event-content {
+  height: 50vh;
+  padding: 0 8rem;
+  margin: auto;
+  text-align: center;
+}
+
+.event-head {
+  background-color: var(--Primary);
+  height: 40vh;
+  width: 40vw;
+  padding: 20px;
+  margin-left: 10%;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: all 300ms;
+}
+
+.event-head:hover {
+  box-shadow: 3px 5px 11px 0px black;
+}
+
+.technical.event-head {
+  margin-left: 0%;
+}
+
+.event-type h2 {
+  margin-top: 7rem;
+}
+
+.event-list {
+  display: none;
+  background-color: var(--Secondary-light);
+  position: absolute;
+  left: 10%;
+  top: 5rem;
+  height: 80vh;
+  width: 80%;
+  cursor: context-menu;
+  border-radius: 5px;
+}
+
+.event-list h3 {
+  color: black;
+}
+
+.cross {
+  position: relative;
+  float: right;
+  font-size: 1.5rem;
+  margin-right: 1.5rem;
+  margin-top: 1rem;
+  color: black;
+  cursor: pointer;
+}
+
+.event-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  height: 80%;
+  margin-left: 40px;
+}
+
+.event-area li {
+  background-color: var(--Secondary);
+  justify-items: center;
+  height: 300px;
+  margin-left: 10px;
+  padding: 20px 10px;
+}
+
+.event-area li:first-child {
+  margin-left: 0px;
+}
+
+.event-area li h3 {
+  padding-bottom: 1.5rem;
+}
+
+/*********************  Service style  *********************/
+
+.service {
+  height: 60vh;
+}
+
+.service-content {
+  width: 70%;
+  margin: 0 15%;
+  padding: 30px;
+}
+
+.icon {
+  margin: auto;
+  width: 200px;
+  text-align: center;
+}
+
+.icon img {
+  border-radius: 100px;
+}
+
+/*********************  Contact style  *********************/
+
+.contact {
+  min-height: 60vh;
+  width: 80%;
+  margin: auto;
+}
+
+.contxt {
+  width: 25%;
+}
+
+.contxt .fa-solid {
+  font-size: 36px;
+}
+
+/*********************  Footer style  *********************/
+
+.footer-content {
+  background-color: var(--Third-light);
+  padding: 20px;
+  height: 30vh;
+  box-shadow: 0px -10px 10px var(--Third-light);
+}
+
+.footer-logo {
+  width: 80px;
+  border-radius: 10px;
+}
+
+.footer-logo img {
+  border-radius: 40px;
+}
+
+.footer-top {
+  color: white;
+}
+
+.footer-links {
+  width: 30%;
+}
+
+.footer-links a {
+  color: white;
+}
+
+.footer-college h3 {
+  margin-bottom: 15px;
+}
+
+.footer-bottom {
+  padding: 5px;
+}
+
+.footer-social {
+  width: 20%;
+}
+
+.fa-brands {
+  color: rgb(34, 34, 153);
+}
+
+.footer-social li {
+  font-size: 28px;
+}
+
+/**************************************  Styles for registration form  **********************************/
+
+.main {
+  background-color: var(--sec-opacity);
+  height: 270vh;
+  width: 100%;
+  padding-top: 2rem;
+  position: relative;
+}
+
+#registration-form {
+  background-color: #f9f9f9;
+  margin-bottom: 1.5rem;
+  padding: 30px 5%;
+  width: 70%;
+  top: 5%;
+  left: 15%;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+#event-registration-form {
+  left: 2rem;
+}
+
+#registration-form h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--Primary);
+  font-family: "Edu NSW ACT Foundation", cursive;
+  font-optical-sizing: auto;
+  font-size: 3em;
+}
+
+#registration-form label {
+  font-weight: bold;
+}
+
+#registration-form input[type="text"],
+#registration-form input[type="email"] {
+  width: 25rem;
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#registration-form select {
+  width: 15rem;
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#registration-form input[type="submit"],
+#registration-form input[type="button"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+#registration-form input[type="submit"]:hover,
+#registration-form input[type="button"]:hover {
+  background-color: #45a049;
+  box-shadow: 3px 5px 11px 0px black;
+}
+
+.upload-form {
+  display: none;
+  width: 410px;
+  height: 300px;
+  background: white;
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  border-radius: 10px;
+}
+
+.upload-form.pay {
+  display: block;
+  height: 470px;
+  width: 450px;
+  position: static;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.upload-form p {
+  padding: 5px 15px;
+}
+
+.upload-form input[type="file"] {
+  padding-left: 20px;
+  width: 240px;
+}
+
+.pay-logo {
+  width: 240px;
+  height: 270px;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+.pay-logo img {
+  border-radius: 14px;
+}
+
+.submit {
+  position: relative;
+  left: 40%;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.payment {
+  padding-left: 40px;
+}
+
+/******************************************  About page style  *****************************************/
+.pa {
+  padding: 2rem 0;
+}
+
+.about {
+  height: 510vh;
+}
+
+.about-heading {
+  padding: 3rem 0;
+}
+
+.about-content {
+  width: 70%;
+  margin: 0 15%;
+}
+
+.about-content p {
+  width: 300px;
+  text-align: center;
+}
+
+.about-content span {
+  font-weight: bold;
+}
+
+.coord-img,
+.coord-img img {
+  width: 250px;
+  height: 300px;
+  /* background-color: var(--Secondary-light); */
+  border-radius: 30px 0;
+  box-shadow: 15px 15px 5px var(--Secondary-light);
+}
+
+.coord-img:nth-child(2),
+.coord-img:nth-child(2) img {
+  border-radius: 0 30px;
+}
+
+.first p,
+.first h2 {
+  transform: translateX(25rem);
+}
+
+.second p,
+.second h2 {
+  transform: translateX(-25rem);
+}
+
+/******************************************  Events page style  *****************************************/
+
+.events {
+  height: 550vh;
+}
+
+.events-heading {
+  padding: 4rem 0;
+}
+
+.events-heading h1 {
+  font-size: 40px;
+}
+
+.events-content {
+  width: 70%;
+  margin: 0 15%;
+}
+
+.events-content p {
+  width: 300px;
+  text-align: center;
+}
+
+.events-content span {
+  font-weight: bold;
+}
+
+.events-img,
+.events-img img {
+  width: 280px;
+  height: 360px;
+  background-color: var(--Secondary-light);
+  border-radius: 40px 0;
+}
+
+.events-img:nth-child(2),
+.events-img:nth-child(2) img {
+  border-radius: 0 40px;
+}
+
+.btn-reg {
+  position: absolute;
+  margin-top: 60px;
+  left: 45%;
+}
+
+/***************************************   Media Queries  *****************************/
+@media only screen and (max-width: 1537px) {
+  .footer-content {
+    height: 25vh;
+  }
+
+  .about {
+    height: 510vh;
+  }
+  .events {
+    height: 550vh;
+  }
+
+  .max-event {
+    height: 90vh;
+  }
+
+  .max-container {
+    height: 75vh;
+  }
+}
+
+@media only screen and (max-width: 1367px) {
+  .text-content {
+    top: 35%;
+  }
+
+  .text-content h2 {
+    font-size: 32px;
+  }
+
+  .text-content h3 {
+    font-size: 24px;
+  }
+
+  .text-content span {
+    font-size: 60px;
+  }
+
+  .text-area {
+    top: 65vh;
+  }
+
+  .box {
+    width: 12rem;
+    font-size: 18px;
+  }
+
+  .event-list {
+    left: 8%;
+    width: 84%;
+  }
+
+  #registration-form h2 {
+    margin-bottom: 4rem;
+  }
+
+  #registration-form input[type="submit"] {
+    padding: 10px 20px;
+    margin-top: 50px;
+  }
+
+  #registration-form input[type="button"] {
+    padding: 5px 15px;
+    border-radius: 4px;
+  }
+
+  .upload-form {
+    margin: 0 25px;
+    width: 380px;
+    right: 1.5rem;
+    background: white;
+    border-radius: 10px;
+    font-size: 15px;
+  }
+
+  .submit {
+    left: 40%;
+    margin-bottom: 2rem;
+  }
+
+  .about {
+    height: 440vh;
+  }
+
+  .first p,
+  .first h2,
+  .third p,
+  .third h2 {
+    transform: translateX(15rem);
+  }
+
+  .second p,
+  .second h2,
+  .fourth p,
+  .fourth h2 {
+    transform: translateX(-15rem);
+  }
+
+  .events {
+    height: 475vh;
+  }
+}
+
+@media only screen and (max-width: 1281px) {
+  .service-content {
+    width: 80%;
+    margin: 0 10%;
+    padding: 25px;
+  }
+
+  .about {
+    height: 440vh;
+  }
+
+  .coord-img {
+    width: 250px;
+    height: 300px;
+  }
+
+  .first p,
+  .third p {
+    transform: translateX(12rem);
+  }
+
+  .second p,
+  .fourth p {
+    transform: translateX(-12rem);
+  }
+
+  .events {
+    height: 475vh;
+  }
+}
+
+@media only screen and (max-width: 1025px) {
+  .team-img {
+    opacity: 0.5;
+  }
+
+  .event-list {
+    left: 5%;
+    width: 90%;
+  }
+
+  .icon {
+    width: 180px;
+  }
+
+  .contxt {
+    width: 30%;
+  }
+
+  .contxt .fa-solid {
+    font-size: 28px;
+  }
+
+  .footer-bottom {
+    padding-right: 40px;
+  }
+
+  .footer-social {
+    width: 25%;
+  }
+
+  #registration-form {
+    left: 10%;
+    width: 80%;
+  }
+
+  .upload-form {
+    top: 39%;
+    height: 290px;
+  }
+
+  .pay {
+    margin-top: 1rem;
+  }
+
+  .first p {
+    transform: translateX(2rem);
+  }
+
+  .second p {
+    transform: translateX(-2rem);
+  }
+
+  .events {
+    height: 480vh;
+  }
+
+  .events-content {
+    width: 80%;
+    margin: 0 10%;
+  }
+}
+
+@media only screen and (max-width: 812px) {
+  .logo {
+    width: 80px;
+  }
+
+  .team-logo {
+    left: 30%;
+    width: 350px;
+  }
+
+  .team-img {
+    opacity: 0.5;
+  }
+
+  .text-content h2 {
+    font-size: 28px;
+  }
+
+  .text-content h3 {
+    font-size: 20px;
+  }
+
+  .text-content span {
+    font-size: 60px;
+  }
+
+  .box {
+    width: 12rem;
+    font-size: 18px;
+  }
+
+  .wwa {
+    height: 90vh;
+  }
+
+  .wwa-content {
+    flex-direction: column;
+    width: 90%;
+    margin: 0 5%;
+  }
+
+  .wwa-box {
+    margin-left: 10px;
+    margin-top: 20px;
+  }
+
+  .wwa-box:hover {
+    transform: translateY(15px);
+  }
+
+  .event-content {
+    padding: 0 3rem;
+  }
+
+  .event-area {
+    width: 90%;
+    margin-left: 30px;
+  }
+
+  .event-area li {
+    padding: 0px 0px;
+    height: 320px;
+    font-size: 15px;
+  }
+
+  .service-content {
+    width: 90%;
+    margin: 0 5%;
+    padding: 25px;
+  }
+
+  .icon {
+    width: 160px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+  }
+
+  .main {
+    height: 250vh;
+  }
+
+  #registration-form h2 {
+    margin-bottom: 3rem;
+    font-size: 2.7em;
+  }
+
+  #registration-form input[type="submit"] {
+    padding: 10px 20px;
+    margin-top: 50px;
+  }
+
+  #registration-form input[type="button"] {
+    padding: 5px 15px;
+    border-radius: 4px;
+  }
+
+  .upload-form {
+    margin: 0 25px;
+    width: 400px;
+    background: white;
+    position: relative;
+    border-radius: 10px;
+    font-size: 15px;
+  }
+
+  .upload-form input[type="file"] {
+    padding-left: 10px;
+    width: 220px;
+}
+
+  .upload-form.pay {
+    width: 320px;
+    font-size: 13px;
+  }
+
+  .submit {
+    left: 35%;
+    margin-bottom: 2rem;
+  }
+
+  .about {
+    height: 390vh;
+  }
+
+  .coord-img {
+    width: 200px;
+    height: 250px;
+  }
+
+  .first p {
+    transform: translateX(3rem);
+  }
+
+  .second p {
+    transform: translateX(3rem);
+  }
+
+  .events {
+    height: 410vh;
+  }
+
+  .events-content {
+    width: 80%;
+    margin: 0 10%;
+  }
+
+  .even {
+    height: 300px;
+  }
+
+  .events-img,
+  .events-img img {
+    width: 220px;
+    height: 260px;
+  }
+
+  .addlen1 {
+    height: 270vh;
+  }
+
+  .addlen2 {
+    height: 320vh;
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  .team-logo {
+    left: 28%;
+  }
+
+  .box {
+    width: 10rem;
+    font-size: 16px;
+  }
+
+  .text-content {
+    top: 30%;
+  }
+
+  .text-content h2 {
+    font-size: 24px;
+  }
+
+  .text-content h3 {
+    font-size: 18px;
+  }
+
+  .text-content span {
+    font-size: 50px;
+  }
+
+  .wwa {
+    height: 100vh;
+  }
+
+  .icon {
+    width: 150px;
+  }
+
+  .contact {
+    width: 90%;
+    margin: auto;
+  }
+
+  .contxt {
+    width: 38%;
+  }
+
+  .about-content p {
+    width: 250px;
+    font-size: 14px;
+  }
+
+  .coord-img,
+  .coord-img img {
+    width: 220px;
+    height: 260px;
+    border-radius: 25px 0;
+  }
+
+  .coord-img:nth-child(2),
+  .coord-img:nth-child(2) img {
+    border-radius: 0 25px;
+  }
+
+  .first p,
+  .first h2 {
+    transform: translateX(0rem);
+  }
+
+  .second p,
+  .second h2 {
+    transform: translateX(-0rem);
+  }
+
+  .events {
+    height: 420vh;
+  }
+
+  .events-heading h1 {
+    font-size: 36px;
+  }
+
+  .events-content p {
+    width: 250px;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 720px) and (max-height: 470px)and (orientation: landscape) {
+
+  header {
+    height: 200vh;
+  }
+  .wwa {
+    height: 180vh;
+  }
+
+  .event {
+    height: 130vh;
+  }
+
+  .event-content {
+    height: 100vh;
+  }
+
+  .event-list {
+    height: 160vh;
+  }
+
+  .event-head {
+    height: 80vh;
+  }
+
+  .service {
+    height: 110vh;
+  }
+
+  .contact {
+    height: 120vh;
+  }
+
+  .main {
+    height: 500vh;
+  }
+
+  .upload-form p {
+    font-size: 12px;
+  }
+
+  .upload-form input[type="file"] {
+    padding-left: 20px;
+    width: 200px;
+  }
+
+  .about {
+    height: 900vh;
+  }
+
+  .events {
+    height: 940vh;
+  }
+
+  .footer-content {
+    height: 50vh;
+  }
+
+  .addlen1 {
+    height: 520vh;
+}
+  
+  .addlen2 {
+    height: 600vh;
+}
+}
+
+@media only screen and (max-width: 701px) {
+  .contact-content {
+    flex-direction: column;
+  }
+
+  .contxt {
+    width: 70%;
+    margin: 0 15%;
+    padding-bottom: 30px;
+  }
+
+  .wwa-content {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .wwa-box:first-child {
+    margin-left: 10px;
+  }
+
+  .wwa-box:hover {
+    transform: translateX(25px);
+  }
+
+  .event-list {
+    height: 145vh;
+  }
+
+  .event-area {
+    flex-direction: column;
+  }
+
+  .event-area li {
+    margin: 0px 10px;
+    margin-top: 15px;
+    padding: 0 15px;
+    padding-top: 30px;
+  }
+
+  .event-area li:first-child {
+    margin-left: 10px;
+  }
+
+  .register {
+    padding-top: 45px;
+  }
+
+  .footer-college h3 {
+    font-size: 16px;
+  }
+
+  .btn-reg {
+    left: 40%;
+  }
+
+  .max-event {
+    height: 155vh;
+  }
+
+  .first p {
+    transform: translateX(-2rem);
+  }
+
+  .second p {
+    transform: translateX(3rem);
+  }
+}
+
+/* @media only screen and (max-width: 671px) and (max-height: 361px)and (orientation: landscape) {
+  
+  
+  
+  .about {
+    height: 940vh;
+  }
+  .events {
+    height: 1010vh;
+  }
+} */
+
+@media only screen and (max-width: 600px) {
+  .fa-arrow-left {
+    font-size: 20px;
+  }
+
+  .logo {
+    width: 60px;
+  }
+
+  .nav-links {
+    /* display: none; */
+    position: absolute;
+    flex-direction: column;
+    background-color: var(--Primary-light);
+    right: -10rem;
+    top: 12vh;
+    height: 50vh;
+    width: 0%;
+    padding: 1.5rem 0;
+    transition: all 300ms;
+    overflow: hidden;
+  }
+
+  .burger {
+    display: block;
+  }
+  .team-logo {
+    left: 24%;
+  }
+
+  .team-img {
+    opacity: 0.5;
+  }
+
+  .text-area {
+    top: 62vh;
+  }
+  .box {
+    margin-right: 10px;
+    font-size: 15px;
+  }
+
+  .wwa {
+    height: 105vh;
+  }
+
+  .event {
+    height: 90vh;
+  }
+
+  .event-content {
+    flex-direction: column;
+    height: 80vh;
+  }
+
+  .event-head {
+    width: 60vw;
+  }
+
+  .non-technical.event-head {
+    margin-left: 0%;
+    margin-top: 5%;
+  }
+
+  .event-type h2 {
+    margin-top: 5.5rem;
+  }
+
+  .event-list {
+    left: 5%;
+    width: 90%;
+    height: 155vh;
+  }
+
+  .service {
+    height: 140vh;
+  }
+
+  .service-content {
+    flex-direction: column;
+    height: 90%;
+    margin: 0 5%;
+    padding: 25px;
+  }
+
+  .icon {
+    width: 200px;
+  }
+
+  .footer-links {
+    flex-direction: row;
+    transform: translateX(-9rem);
+  }
+
+  .footer-links li {
+    padding: 0 5px;
+  }
+
+  .footer-college {
+    display: none;
+  }
+  .footer-social li {
+    margin-left: 8px;
+  }
+
+  #registration-form {
+    width: 80%;
+    left: 10%;
+  }
+
+  #registration-form h2 {
+    margin-bottom: 1rem;
+    font-size: 2.5em;
+  }
+
+  #registration-form label {
+    font-size: 16px;
+  }
+
+  #registration-form input[type="text"],
+  #registration-form input[type="email"] {
+    padding: 8px;
+    width: 95%;
+    font-size: 14px;
+  }
+
+  #registration-form select {
+    padding: 8px;
+    width: 13rem;
+  }
+
+  #registration-form input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin-top: 50px;
+  }
+
+  #registration-form input[type="button"] {
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 16px;
+  }
+
+  .upload-form {
+    margin: 0 25px;
+    width: 390px;
+    height: 300px;
+    background: white;
+    position: relative;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+
+  #myFile {
+    width: 215px;
+  }
+
+  #myFileppt {
+    width: 215px;
+  }
+
+  .submit {
+    left: 30%;
+    margin-bottom: 2rem;
+  }
+
+  .about {
+    height: 320vh;
+  }
+  .about-content {
+    width: 80%;
+    margin: 0 10%;
+  }
+
+  .first p {
+    transform: translateX(0rem);
+  }
+
+  .second p {
+    transform: translateX(0rem);
+  }
+
+  .coord-img,
+  .coord-img img {
+    width: 140px;
+    height: 200px;
+    border-radius: 25px 0;
+    box-shadow: 10px 10px 5px var(--Secondary-light);
+  }
+  .events {
+    height: 410vh;
+  }
+
+  .events-img,
+  .events-img img {
+    width: 180px;
+    height: 220px;
+    border-radius: 25px 0;
+  }
+
+  .events-img:nth-child(2),
+  .events-img:nth-child(2) img {
+    border-radius: 0 25px;
+  }
+
+  .max-event {
+    height: 170vh;
+  }
+}
+
+@media only screen and (max-width: 484px) {
+  .team-logo {
+    left: 20%;
+  }
+
+  .team-img {
+    width: 280px;
+  }
+
+  .text-area {
+    top: 55vh;
+    flex-direction: column;
+  }
+
+  .box {
+    margin-bottom: 20px;
+  }
+
+  .footer-social li {
+    margin-left: 8px;
+  }
+
+  #more {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 421px) {
+  .header-content {
+    height: 10vh;
+  }
+
+  .logo {
+    width: 50px;
+  }
+
+  .nav-links {
+    height: 30vh;
+    z-index: 2;
+  }
+
+  .team-logo {
+    left: 14%;
+    width: 300px;
+  }
+
+  .team-img {
+    z-index: 1;
+    opacity: 0.5;
+  }
+
+  .text-content {
+    top: 34%;
+  }
+
+  .text-content h2,
+  h3 {
+    font-size: 20px;
+  }
+
+  .text-content span {
+    font-size: 44px;
+  }
+
+  .text-area {
+    top: 50vh;
+    flex-direction: column;
+  }
+
+  .box {
+    width: 10rem;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .wwa {
+    height: 105vh;
+  }
+
+  .wwa-content {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .event-content {
+    padding: 0 1.5rem;
+  }
+
+  .event-head {
+    width: 75vw;
+  }
+
+  .event-list {
+    height: 180vh;
+  }
+
+  .event-area {
+    margin-top: 2.5rem;
+  }
+
+  .event-area li {
+    height: 260px;
+  }
+
+  .service {
+    height: 130vh;
+  }
+
+  .service-content {
+    height: 85%;
+  }
+
+  .icon {
+    width: 180px;
+  }
+
+  .contact {
+    height: 120vh;
+  }
+
+  .contact-content {
+    flex-direction: column;
+  }
+
+  .contxt {
+    width: 80%;
+    margin-bottom: 3rem;
+  }
+
+  .contxt .fa-solid {
+    font-size: 24px;
+  }
+
+  .footer-logo {
+    width: 60px;
+  }
+
+  .footer-links {
+    flex-direction: row;
+    transform: translateX(-9rem);
+  }
+
+  .footer-links li {
+    padding: 0 5px;
+  }
+
+  .footer-college {
+    display: none;
+  }
+
+  .footer-bottom {
+    flex-direction: column-reverse;
+    padding-right: 5px;
+  }
+
+  .footer-social {
+    width: 50%;
+  }
+
+  .footer-social li {
+    margin-bottom: 1rem;
+  }
+
+  .main {
+    height: 240vh;
+  }
+
+  #registration-form {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    width: 90%;
+    left: 5%;
+  }
+
+  #registration-form h2 {
+    margin-bottom: 1rem;
+    font-size: 2em;
+  }
+
+  #registration-form label {
+    font-size: 14px;
+  }
+
+  #registration-form input[type="text"],
+  #registration-form input[type="email"] {
+    padding: 7px;
+    width: 97%;
+    font-size: 12px;
+  }
+
+  #registration-form select {
+    padding: 7px;
+    width: 10rem;
+  }
+
+  #registration-form input[type="submit"] {
+    padding: 7px 16px;
+    margin-top: 50px;
+  }
+
+  #registration-form input[type="button"] {
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 14px;
+  }
+
+  .upload-form {
+    /* display: none; */
+    margin: 0 5%;
+    width: 105%;
+    height: 300px;
+    background: white;
+    position: relative;
+    border-radius: 10px;
+    font-size: 14px;
+  }
+
+  .upload-form.pay {
+    width: 310px;
+    height: 450px;
+  }
+
+  #myFile {
+    width: 215px;
+  }
+
+  #myFileppt {
+    width: 215px;
+  }
+
+  .submit {
+    left: 30%;
+    margin-bottom: 2rem;
+  }
+
+  .max-event {
+    height: 190vh;
+  }
+
+  .about {
+    height: 340vh;
+  }
+
+  .about-content {
+    width: 80%;
+    margin: 0 10%;
+  }
+
+  .about-content p {
+    width: 270px;
+    font-size: 12px;
+  }
+
+  .coord-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px 0;
+  }
+
+  .coord-img:nth-child(2) {
+    border-radius: 0 20px;
+  }
+
+  .first img {
+    border-radius: 0 20px;
+  }
+
+  .second img {
+    border-radius: 20px 0;
+  }
+
+  .first p {
+    transform: translateX(-1rem);
+  }
+
+  .second p {
+    transform: translateX(1rem);
+  }
+
+  .events {
+    height: 430vh;
+  }
+
+  .events-heading h1 {
+    font-size: 32px;
+  }
+
+  .events-content {
+    width: 90%;
+    margin: 0 20px;
+  }
+
+  .events-content p {
+    width: 270px;
+    font-size: 14px;
+  }
+
+  .events-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px 0;
+  }
+
+  .events-img:nth-child(2) {
+    border-radius: 0 20px;
+  }
+
+  .btn-reg {
+    left: 35%;
+  }
+
+  .addlen1 {
+    height: 250vh;
+  }
+
+  .addlen2 {
+    height: 300vh;
+  }
+}
+
+@media only screen and (max-width: 391px) {
+  .text-content {
+    top: 36%;
+  }
+
+  .text-content h1 {
+    font-size: 60px;
+  }
+
+  .text-area {
+    top: 52vh;
+  }
+
+  .event-area {
+    width: 90%;
+    margin-left: 18px;
+  }
+
+  .icon {
+    width: 160px;
+  }
+
+  .about {
+    height: 340vh;
+  }
+
+  .events {
+    height: 470vh;
+  }
+}
+
+@media only screen and (max-width: 361px) {
+  .wwa {
+    height: 110vh;
+  }
+
+  .wwa-box {
+  }
+
+  #registration-form input[type="text"],
+  #registration-form input[type="email"] {
+    padding: 7px;
+    width: 18rem;
+    font-size: 12px;
+  }
+
+  .upload-form {
+    width: 320px;
+  }
+
+  .upload-form.pay {
+    width: 300px;
+    height: 450px;
+  }
+
+  .events {
+    height: 430vh;
+  }
+
+  .events-heading h1 {
+    font-size: 28px;
+  }
+
+  .events-content p {
+    width: 270px;
+    font-size: 12px;
+  }
+}
+
+/***************************************  Javascript Add style **************************************/
+
+.nav-show {
+  width: 100%;
+  right: 0px;
+}
+
+.textarea {
+  left: -18rem;
+}
+
+.img-opacity {
+  opacity: 0.5;
+}
+
+.remove-type {
+  display: none;
+}
+
+.add-list {
+  display: block;
+}
+
+.remove-type1 {
+  display: none;
+}
+
+.add-list1 {
+  display: block;
+}
+
+.show-upload {
+  display: block;
+}

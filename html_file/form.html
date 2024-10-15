@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Registration</title>
+    <link rel="stylesheet" href="/style/style.css">
+    <script src="https://kit.fontawesome.com/7a50276243.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="main">
+        <!-- Event Cards will go here -->
+
+        <div id="registration-form">
+            <h2>Register for Events</h2>
+            <form>
+                <label for="name">Name :</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email :</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="mobile-number">Mobile Number:</label><br>
+                <input type="text" id="mobile" name="mobile" required><br><br>
+
+                <label for="college">College Name :</label><br>
+                <input type="text" id="college" name="college" required><br><br>
+
+                <label for="department">Department :</label><br>
+                <input type="text" id="dep" name="department" required><br><br>
+
+                <label for="year">Year :</label><br>
+                <select id="year" name="year" required>
+                    <option selected value="">Select Year</option>
+                    <option value="I year">I year</option>
+                    <option value="II year">II year</option>
+                    <option value="III year">III year</option>
+                    <option value="IV year">IV year</option>
+                </select><br><br>
+
+                <label for="event">Technical Event :</label><br>
+                <select id="event" name="event" required>
+                    <option value="" selected>Select an event</option>
+                    <option value="Teck Quiz">Teck Quiz</option>
+                    <option value="Project Expo">Project Expo</option>
+                    <option value="Circuit Debuging">Circuit Debuging</option>
+                    <option value="Paper Presentation">Paper Presentation</option>
+                </select><br><br>
+
+                <div class="upload-form">
+                    <p>Click on the "Choose File" button to upload a file:<br>
+                        (File Name should be "Your Name_College Name.pdf or .pptx")</p>
+
+                    <p>Upload your PDF File here</p>
+                    <input type="file" id="myFile" accept=".pdf">
+                    <input class="upload" type="button" value="Upload FIle">
+                    <p class="message"></p>
+
+                    <p>Upload your PPT File here</p>
+                    <input type="file" id="myFileppt" accept=".pptx">
+                    <input class="uploadppt" type="button" value="Upload FIle">
+                    <p class="messageppt"></p>
+                </div>
+
+                <label for="event1">Non Technical Event :</label><br>
+                <select id="event1" name="event1" required>
+                    <option value="" selected>Select an event</option>
+                    <option value="Bioscope">Bioscope</option>
+                    <option value="Try To Find Me">Try To Find Me</option>
+                    <option value="Spark your Brain">Spark your Brain</option>
+                    <option value="Treasure Hunt">Treasure Hunt</option>
+                </select><br><br>
+
+                <div class="upload-form pay">
+                    <div class="pay-logo">
+                        <img src="/images/pay.jpg" alt="">
+                    </div>
+                    <p>Click on the "Browse" button to upload a Payment Screenshot here:<br>
+                        (Screenshot Name should be "Your Name_College Name")</p><br>
+                    <input type="file" id="myFileimg" name="image" accept="image/*">
+                    <input class="uploadimg" type="button" value="Upload">
+                </div>
+
+                <input class="submit" type="submit" value="Register">
+            </form>
+            <div class="back">
+                <a href="/index.html">&Lt;Go Back Home</i></a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script>
+
+        // --------------------------------  Variables  --------------------------------------
+
+        let reg = document.querySelector("#registration-form");
+        let main = document.querySelector(".main");
+        let upload = document.querySelector(".upload-form");
+        let form = document.querySelector("form");
+
+
+        let url = "https://script.google.com/macros/s/AKfycbyMndbvnTmvOS6e4IAslsqOzCFgtbxDeGGOXiIrJMKnDL29TKZfy9XfUwqvBVfk7RZrcg/exec";
+        let url1 = "https://script.google.com/macros/s/AKfycbxtWMJBBVLRXIQlyTDWNGLb4B0D7NONFwze0T0sciUbxb6-DlZiFKDfk0js2Iu6R0kk9w/exec";
+        let file = document.querySelector("#myFile");
+        let fileppt = document.querySelector("#myFileppt");
+        let fileimg = document.querySelector("#myFileimg");
+        let uploadpdf = document.querySelector(".upload");
+        let uploadppt = document.querySelector(".uploadppt");
+        let uploadimg = document.querySelector(".uploadimg");
+        
+        uploadpdf.addEventListener('submit', function(){
+            
+        })
+
+        uploadppt.addEventListener('click', function(){
+            if(!fileppt.value){
+                fileppt.setAttribute('required', true);
+            }
+            else{
+                fileppt.removeAttribute('required');
+            }
+        })
+
+        uploadimg.addEventListener('click', function(){
+            if(!(fileimg.value)){
+                fileimg.setAttribute('required', true);
+            }
+            else{
+                fileimg.removeAttribute('required');
+            }
+        })
+
+
+
+        // --------------------------------  Javascript for Show the Upload option on Registration Form  --------------------------------------
+
+        document.getElementById('event').addEventListener('change', function (event) {
+            var select = document.getElementById('event');
+            var upload = document.querySelector(".upload-form");
+            if(select.value === "Paper Presentation"){
+                upload.classList.add("show-upload");
+                reg.classList.add("addlen1");
+                main.classList.add("addlen2");
+            }
+            else{
+                upload.classList.remove("show-upload");
+                reg.classList.remove("addlen1");
+                main.classList.remove("addlen2");
+            }
+        });
+
+        // --------------------------------  Javascript for Upload PDF File to Google Drive  --------------------------------------
+
+        uploadpdf.addEventListener('click', () => {
+
+            document.querySelector(".upload").value = "Uploading..";
+            let fr = new FileReader(file);
+            fr.addEventListener('loadend', () => {
+                let res = fr.result;
+                let spt = res.split("base64,")[1];
+                let obj = {
+                    base64: spt,
+                    type: file.files[0].type,
+                    name: file.files[0].name
+                }
+                fetch(url, {
+                    method: "POST",
+                    body: JSON.stringify(obj)
+                })
+                    .then(r => r.text())
+                    .then(data => {
+                        console.log(data);
+                        document.querySelector(".message").innerHTML = 'Uploaded Successfully';
+                        document.querySelector(".upload").value = "Upload File";
+                    })
+            })
+            fr.readAsDataURL(file.files[0])
+        })
+
+        // --------------------------------  Javascript for Upload PPT File to Google Drive  --------------------------------------
+
+        uploadppt.addEventListener('click', () => {
+
+            document.querySelector(".uploadppt").value = "Uploading..";
+            let fr = new FileReader(fileppt);
+            fr.addEventListener('loadend', () => {
+                let res = fr.result;
+                let spt = res.split("base64,")[1];
+                let obj = {
+                    base64: spt,
+                    type: fileppt.files[0].type,
+                    name: fileppt.files[0].name
+                }
+                fetch(url1, {
+                    method: "POST",
+                    body: JSON.stringify(obj)
+                })
+                    .then(r => r.text())
+                    .then(data => {
+                        console.log(data);
+                        document.querySelector(".messageppt").innerHTML = 'Uploaded Successfully';
+                        document.querySelector(".uploadppt").value = "Upload File";
+                    })
+            })
+            fr.readAsDataURL(fileppt.files[0])
+        })
+
+        
+        // --------------------------------  Javascript for From Submission on Google Sheet  --------------------------------------
+        
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            document.querySelector(".submit").value = "Submiting..";
+            let data = new FormData(form);
+            console.log(data);
+            fetch('https://script.google.com/macros/s/AKfycbyPXSprr55XZv0zWCIbNB_he-KZTzBGskO0GLEpTaa7nyUtHvadzJMOtqF22w4WUQyjLw/exec', {
+                method: "POST",
+                body: data
+            })
+                .then(res => res.text())
+                .then(data => {
+                    alert(data);
+                    document.querySelector("form").reset();
+                    document.querySelector(".message").innerHTML = '';
+                    document.querySelector(".submit").value = "Register"
+                });
+        })
+
+
+        
+    </script>
+</body>
+
+</html>
